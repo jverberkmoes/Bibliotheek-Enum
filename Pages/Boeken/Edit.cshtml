@@ -1,0 +1,73 @@
+﻿@page
+@using Bibliotheek.Datamodels
+@model Bibliotheek.Pages.Boeken.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Boek</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Boek.Boek_ID" />
+            <div class="form-group">
+                <label asp-for="Boek.Boek_Genre" class="control-label"></label>
+                <select asp-for="Boek.Boek_Genre"
+                        class="form-select"
+                        asp-items="Html.GetEnumSelectList<Boekgenres>()">
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boek.Boek_Titel" class="control-label"></label>
+                <input asp-for="Boek.Boek_Titel" class="form-control" />
+                <span asp-validation-for="Boek.Boek_Titel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boek.Boek_Serienummer" class="control-label"></label>
+                <input asp-for="Boek.Boek_Serienummer" class="form-control" />
+                <span asp-validation-for="Boek.Boek_Serienummer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boek.Boek_Schrijver" class="control-label"></label>
+                <input asp-for="Boek.Boek_Schrijver" class="form-control" />
+                <span asp-validation-for="Boek.Boek_Schrijver" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boek.Boek_Prijs" class="control-label"></label>
+                <input asp-for="Boek.Boek_Prijs" class="form-control" />
+                <span asp-validation-for="Boek.Boek_Prijs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boek.Boek_ISBN" class="control-label"></label>
+                <input asp-for="Boek.Boek_ISBN" class="form-control" />
+                <span asp-validation-for="Boek.Boek_ISBN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boek.Boek_Uitgifte" class="control-label"></label>
+                <input asp-for="Boek.Boek_Uitgifte" class="form-control" />
+                <span asp-validation-for="Boek.Boek_Uitgifte" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Boek.Boek_Gelezen" class="control-label"></label>
+                <input asp-for="Boek.Boek_Gelezen" class="form-control" />
+                <span asp-validation-for="Boek.Boek_Gelezen" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

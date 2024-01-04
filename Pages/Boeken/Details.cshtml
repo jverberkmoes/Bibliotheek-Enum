@@ -1,0 +1,67 @@
+﻿@page
+@model Bibliotheek.Pages.Boeken.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Boek</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Boek.Boek_Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Boek.Boek_Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Boek.Boek_Titel)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Boek.Boek_Titel)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Boek.Boek_Serienummer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Boek.Boek_Serienummer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Boek.Boek_Schrijver)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Boek.Boek_Schrijver)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Boek.Boek_Prijs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Boek.Boek_Prijs)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Boek.Boek_ISBN)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Boek.Boek_ISBN)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Boek.Boek_Uitgifte)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Boek.Boek_Uitgifte)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Boek.Boek_Gelezen)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Boek.Boek_Gelezen)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Boek?.Boek_ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
